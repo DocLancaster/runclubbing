@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>runclubbing — Events</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">runclubbing</a>
+  <nav>
+    <a href="profile.html">Profile</a>
+    <a class="active" href="events.html">Events</a>
+    <a href="stats.html">Statistiken</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Events & Einladungen</h1>
+
+  <section class="card">
+    <h2>Race-Organizer (Preview)</h2>
+    <form id="org-form">
+      <div class="grid-3">
+        <label>Eventname <input name="event" required placeholder="City Run 10k"/></label>
+        <label>Datum <input type="date" name="date" required/></label>
+        <label>Distanz
+          <select name="distance" required>
+            <option>5k</option><option>10k</option><option>HM</option><option>M</option>
+          </select>
+        </label>
+      </div>
+      <label>Zielgruppe (Tag/Filter)
+        <input name="filter" placeholder="z. B. 10k unter 45:00"/>
+      </label>
+      <button class="btn" type="submit">Einladungs-Entwurf speichern</button>
+      <p class="muted">MVP: speichert lokal. Später echte Organizer-Konten + Einladungs-API.</p>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Entwürfe</h2>
+    <div id="orgDrafts" class="list"></div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="y"></span> runclubbing</footer>
+<script src="assets/js/app.js"></script>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  rcUI.initEventsPage();
+</script>
+</body>
+</html>

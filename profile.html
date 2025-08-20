@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>runclubbing — Profile</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">runclubbing</a>
+  <nav>
+    <a class="active" href="profile.html">Profile</a>
+    <a href="events.html">Events</a>
+    <a href="stats.html">Statistiken</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Profile</h1>
+
+  <section id="new" class="card">
+    <h2>Neues Profil anlegen</h2>
+    <form id="profile-form">
+      <div class="grid-2">
+        <label>Displayname
+          <input required name="name" placeholder="z. B. Anna S."/>
+        </label>
+        <label>Stadt (optional)
+          <input name="city" placeholder="Hamburg"/>
+        </label>
+      </div>
+
+      <div class="grid-2">
+        <label>Avatar (Bild)
+          <input type="file" accept="image/*" name="avatar"/>
+        </label>
+        <div class="avatar-preview">
+          <img id="avatarPreview" alt="Avatar-Vorschau"/>
+          <small>Vorschau</small>
+        </div>
+      </div>
+
+      <fieldset class="pb-grid">
+        <legend>Bestzeiten (optional)</legend>
+        <label>5 km <input name="pb5k" pattern="\\d{1,2}:\\d{2}" placeholder="20:40"/></label>
+        <label>10 km <input name="pb10k" pattern="\\d{2}:\\d{2}" placeholder="42:00"/></label>
+        <label>HM <input name="pbhm" pattern="\\d{1,2}:\\d{2}:\\d{2}" placeholder="1:40:48"/></label>
+        <label>M <input name="pbm" pattern="\\d{1,2}:\\d{2}:\\d{2}" placeholder="3:48:00"/></label>
+      </fieldset>
+
+      <button class="btn btn-dark" type="submit">Profil speichern</button>
+    </form>
+  </section>
+
+  <section id="upload" class="card">
+    <h2>Urkunde hochladen (Platzhalter)</h2>
+    <form id="cert-form">
+      <div class="grid-3">
+        <label>Profil
+          <select name="profileId" id="certProfileSelect" required></select>
+        </label>
+        <label>Distanz
+          <select name="distance" required>
+            <option value="5k">5 km</option>
+            <option value="10k">10 km</option>
+            <option value="hm">Halbmarathon</option>
+            <option value="m">Marathon</option>
+            <option value="other">Andere</option>
+          </select>
+        </label>
+        <label>Zeit (hh:mm:ss)
+          <input name="time" required pattern="\\d{1,2}:\\d{2}:\\d{2}" placeholder="00:45:30"/>
+        </label>
+      </div>
+
+      <div class="grid-2">
+        <label>Eventname
+          <input name="race" placeholder="Stadtlauf Hamburg"/>
+        </label>
+        <label>Datum
+          <input type="date" name="date" required/>
+        </label>
+      </div>
+
+      <label>Urkunde (PNG/JPG/PDF)
+        <input type="file" accept=".png,.jpg,.jpeg,.pdf" name="file" required/>
+      </label>
+
+      <button class="btn" type="submit">Urkunde speichern</button>
+      <p class="muted">Hinweis: Dateien werden aktuell nicht hochgeladen — wir speichern nur Metadaten lokal. OCR folgt.</p>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Alle Profile</h2>
+    <div id="profilesList" class="cards-grid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="y"></span> runclubbing</footer>
+<script src="assets/js/app.js"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

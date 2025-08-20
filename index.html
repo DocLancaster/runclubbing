@@ -1,292 +1,59 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Runners Community – Die Plattform für Hobbyläufer. Urkunden hochladen, Statistiken teilen und an Events teilnehmen." />
-  <title>Runners Community</title>
-  <style>
-    /* ---------- Reset ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* ---------- Header ---------- */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 5%;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #222;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    nav ul li a:hover {
-      color: #ffb703;
-    }
-
-    /* ---------- Hero Section ---------- */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 5rem 5%;
-      background: linear-gradient(120deg, #ffb703, #fb8500);
-      color: white;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-
-    .hero button {
-      background-color: #222;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .hero button:hover {
-      background-color: #000;
-    }
-
-    /* ---------- Profiles ---------- */
-    .profiles {
-      padding: 4rem 5%;
-      background-color: #fff;
-    }
-
-    .profiles h3 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .profile-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .profile-card {
-      background-color: #f9f9f9;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
-    }
-
-    .profile-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .profile-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .profile-card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .profile-card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    /* ---------- Stats Section ---------- */
-    .stats {
-      padding: 4rem 5%;
-      background-color: #f1f1f1;
-      text-align: center;
-    }
-
-    .stats h3 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .stat-box {
-      background-color: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .stat-box h4 {
-      font-size: 1.5rem;
-      color: #fb8500;
-    }
-
-    /* ---------- Events ---------- */
-    .events {
-      padding: 4rem 5%;
-      background-color: white;
-      text-align: center;
-    }
-
-    .events h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .events p {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      color: #555;
-    }
-
-    .events button {
-      background-color: #fb8500;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .events button:hover {
-      background-color: #ffb703;
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 5%;
-      font-size: 0.9rem;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>runclubbing — Die Runners Community</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="description" content="Offizielle Profile, Urkunden-Upload und Community-Statistiken für Hobbyläufer."/>
 </head>
 <body>
-  <header>
-    <h1>Runners Community</h1>
+  <header class="site-header">
+    <a class="brand" href="index.html">runclubbing</a>
     <nav>
-      <ul>
-        <li><a href="#">Start</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Statistiken</a></li>
-      </ul>
+      <a href="profile.html">Profile</a>
+      <a href="events.html">Events</a>
+      <a href="stats.html">Statistiken</a>
+      <a class="cta" href="profile.html#new">Profil anlegen</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Deine Läufe. Deine Community.</h2>
-    <p>Teile deine Erfolge, lade Urkunden hoch, vergleiche Statistiken und werde Teil der größten Hobbyläufer-Community.</p>
-    <button>Jetzt Profil erstellen</button>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Deine Läufe. Deine Community.</h1>
+      <p>Lade Urkunden hoch, sammle Bestzeiten und vernetze dich mit Veranstaltern.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="profile.html#new">Jetzt Profil erstellen</a>
+        <a class="btn" href="stats.html">Community-Zahlen ansehen</a>
+      </div>
+    </section>
 
-  <section class="profiles">
-    <h3>Top Läufer</h3>
-    <div class="profile-grid">
-      <div class="profile-card">
-        <img src="https://source.unsplash.com/400x300/?runner" alt="Runner">
-        <h4>Anna Schmidt</h4>
-        <p>Bestzeit 5km: 21:35<br>Marathon: 3:45:00</p>
-      </div>
-      <div class="profile-card">
-        <img src="https://source.unsplash.com/400x300/?jogging" alt="Runner">
-        <h4>Max Müller</h4>
-        <p>Bestzeit 5km: 18:55<br>Marathon: 3:10:00</p>
-      </div>
-      <div class="profile-card">
-        <img src="https://source.unsplash.com/400x300/?athlete" alt="Runner">
-        <h4>Sophie Lehmann</h4>
-        <p>Bestzeit 5km: 20:15<br>Marathon: 3:30:00</p>
-      </div>
-    </div>
-  </section>
+    <section class="tiles">
+      <article>
+        <h3>Offizielle Profile</h3>
+        <p>Öffentliche Profilseiten mit PBs (5k, 10k, HM, M) und Gesamt-km.</p>
+        <a href="profile.html" class="link">Zu den Profilen →</a>
+      </article>
+      <article>
+        <h3>Urkunden-Upload</h3>
+        <p>PNG/JPG/PDF hochladen. OCR-Auswertung folgt (Splits, Zeit, Distanz).</p>
+        <a href="profile.html#upload" class="link">Urkunde hinzufügen →</a>
+      </article>
+      <article>
+        <h3>Events & Einladungen</h3>
+        <p>Race-Organizer können Läufer direkt einladen (Opt-in & Privatheitsmodi).</p>
+        <a href="events.html" class="link">Events öffnen →</a>
+      </article>
+    </section>
+  </main>
 
-  <section class="stats">
-    <h3>Community-Statistiken</h3>
-    <div class="stats-grid">
-      <div class="stat-box">
-        <h4>2.345</h4>
-        <p>aktive Läufer</p>
-      </div>
-      <div class="stat-box">
-        <h4>12.879</h4>
-        <p>gelaufene Rennen</p>
-      </div>
-      <div class="stat-box">
-        <h4>743</h4>
-        <p>verknüpfte Urkunden</p>
-      </div>
-      <div class="stat-box">
-        <h4>128</h4>
-        <p>bevorstehende Events</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="events">
-    <h3>Veranstaltungen</h3>
-    <p>Entdecke neue Rennen, sichere dir Startplätze und erhalte direkte Einladungen von Veranstaltern.</p>
-    <button>Jetzt Events entdecken</button>
-  </section>
-
-  <footer>
-    &copy; 2025 Runners Community – Alle Rechte vorbehalten
+  <footer class="site-footer">
+    © <span id="y"></span> runclubbing — made for runners
   </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>

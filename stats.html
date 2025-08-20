@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>runclubbing — Statistiken</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">runclubbing</a>
+  <nav>
+    <a href="profile.html">Profile</a>
+    <a href="events.html">Events</a>
+    <a class="active" href="stats.html">Statistiken</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Community-Statistiken</h1>
+  <section class="stats-grid">
+    <div class="stat">
+      <div class="stat-number" id="statProfiles">0</div>
+      <div class="stat-label">aktive Profile</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number" id="statCertificates">0</div>
+      <div class="stat-label">hinterlegte Urkunden</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number" id="statRaces">0</div>
+      <div class="stat-label">Rennen (distinct)</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="y"></span> runclubbing</footer>
+<script src="assets/js/app.js"></script>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  rcUI.renderStats();
+</script>
+</body>
+</html>
