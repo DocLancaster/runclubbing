@@ -8,7 +8,21 @@
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="index.html">runclubbing</a>
+  <a class="brand" href="index.html" aria-label="runclubbing">
+  <svg class="logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="rc_g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="var(--accent-2)"/>
+        <stop offset="100%" stop-color="var(--accent)"/>
+      </linearGradient>
+    </defs>
+    <circle cx="12" cy="12" r="11" fill="url(#rc_g)"/>
+    <!-- stylized running stride -->
+    <path d="M6 13c3.5-.5 5.5-2.5 8-5l2 1c-2.2 2.9-4.8 5.2-9 6z" fill="#ffffff" opacity=".95"/>
+    <path d="M7 16c3.7.2 6.7-.7 10-2l1 1c-3.6 1.8-7.2 2.6-11 2.4z" fill="#ffffff" opacity=".85"/>
+  </svg>
+  <span>runclubbing</span>
+</a>
   <nav>
     <a href="profile.html">Profile</a>
     <a href="events.html">Events</a>
