@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>runclubbing — Profil</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.2"/>
+  <meta name="description" content="Profil und Wettkampfergebnisse eines Läufers auf runclubbing."/>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">runclubbing</a>
+  <nav>
+    <a href="profile.html">Profile</a>
+    <a href="events.html">Events</a>
+    <a href="stats.html">Statistiken</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card" id="pHeader">
+    <!-- wird per JS gefüllt -->
+  </section>
+
+  <section class="card">
+    <h2 style="margin-top:0">Bestzeiten</h2>
+    <div id="pPBs" class="pb-grid"></div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin-top:0">Ergebnisse / Urkunden</h2>
+    <div class="table-wrap">
+      <table class="rc-table" id="pResults">
+        <thead><tr>
+          <th>Datum</th><th>Event</th><th>Distanz</th><th>Zeit</th><th>Datei</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="y"></span> runclubbing</footer>
+<script src="assets/js/app.js?v=1.0.2"></script>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  rcUI.initProfileDetail();
+</script>
+</body>
+</html>
